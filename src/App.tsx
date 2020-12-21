@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    //remove bootloader container
+    const container = document.getElementById("bootloader-container");
+    if (container) {
+      setTimeout(() => container.parentNode?.removeChild(container), 500);
+    }
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
